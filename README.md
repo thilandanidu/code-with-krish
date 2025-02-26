@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/javascript-program-to-calculate-the-average-of-all-the-elements-present-in-an-array/
