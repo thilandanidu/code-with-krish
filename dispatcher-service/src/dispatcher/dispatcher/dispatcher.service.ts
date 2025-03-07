@@ -53,7 +53,7 @@ export class DispatcherService implements OnModuleInit {
                 );
                 const { city } = JSON.parse(message.value?.toString() || '{}');
                 const dispatcher = await this.dispatcherRepository.findOne({ where: { city } })
-             console.log(dispatcher)
+                console.log(dispatcher)
               },
             });
         
@@ -62,7 +62,7 @@ export class DispatcherService implements OnModuleInit {
           async getVehicleByCity(city: string): Promise<Dispatcher[]> {
             const dispathers = await this.dispatcherRepository.find({ where: { city } });
             if (!dispathers || dispathers.length === 0) {
-            // throw new NotFoundException(`Dispatcher with city: ${city} is not have any records`);
+            // throw new NotFoundException(`Dispatcher with city: ${city} does not have any records`);
             }
             return dispathers;
           }
