@@ -60,9 +60,11 @@ export class DispatcherService implements OnModuleInit {
           }
 
           async getVehicleByCity(city: string): Promise<Dispatcher[]> {
-
-            return await this.dispatcherRepository.find({ where: { city } });
-        
+            const dispathers = await this.dispatcherRepository.find({ where: { city } });
+            if (!dispathers || dispathers.length === 0) {
+            // throw new NotFoundException(`Dispatcher with city: ${city} is not have any records`);
+            }
+            return dispathers;
           }
 
 
